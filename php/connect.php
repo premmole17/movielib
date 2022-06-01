@@ -9,13 +9,17 @@ $password = $_POST['password'];
 
 $_SESSION["email"] = $email;
 
-include 'database.php';
+$servername = "remotemysql.com";
+$username = "RF47CRvwZw";
+$password = "9WU6xKZ4UZ";
+$database = "RF47CRvwZw"
+// Create connection
+$conn = new mysqli($servername, $username, $password,$database);
 
-// $sql = 'select * from login where email = '."$email".'';
-
-
-
-
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
 if($conn->connect_error){
 	die('connection failed : ' .$conn->connect_error);
