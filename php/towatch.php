@@ -1,8 +1,7 @@
 <?php
 session_start();
 $id = $_SESSION['id'];
-$conn = new mysqli('localhost','root','','movie_database');
-
+include 'database.php';
 
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);

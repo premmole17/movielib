@@ -9,7 +9,7 @@ $password = $_POST['password'];
 
 $_SESSION["email"] = $email;
 
-$conn = new mysqli('localhost','root','','movie_database');
+include 'database.php';
 
 // $sql = 'select * from login where email = '."$email".'';
 
@@ -26,7 +26,7 @@ else{
 	$stmt->bind_param("sisss",$name,$mobno,$gender,$email,$password);
 }
 
-try{$stmt->execute()}
+try{$stmt->execute();}
 catch (mysqli_sql_exception $e) { 
 	echo '<h3 style="text-align: center; margin-top: 20px;">'.$email.' Email Already Exists</h3>
 	
@@ -35,7 +35,7 @@ catch (mysqli_sql_exception $e) {
 	</form>';
 	exit; 
  } 
-header('location: index.php');
+header('location: ../index.html');
 $stmt->close();
 $conn->close();
 

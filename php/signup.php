@@ -5,7 +5,7 @@
 		<title>Login Page</title>
 
 		<!-- Linking to css sheets -->
-		<link rel="stylesheet" href="signup.css">
+		<link rel="stylesheet" href="../css/signup.css">
 		<link rel="php" href="connect.php">
 	</head>
 	<body>
